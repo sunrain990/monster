@@ -1,0 +1,166 @@
+/* Fix user-agent */
+* {
+    box-sizing: border-box;
+}
+html {
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+}
+html, input {
+    font-family:
+            "微软雅黑",
+            Arial,
+            "Lucida Grande",
+            sans-serif;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+ul {
+    list-style: none;
+    word-wrap: break-word;
+    padding: 0;
+}
+.page-header { text-align: center; line-height: 2em;}
+/* Pages */
+.container {width: 640px; margin: 30px auto 30px auto; border:1px solid #ccc; min-height: 500px;}
+.pages {
+    margin: 0;
+    padding: 0;
+}
+/* Login Page */
+.login-page {
+    position: fixed; left: 0; right: 0;bottom: 0;top: 0;
+    background-color: #000;
+}
+.login-page .form {
+    height: 100px;
+    margin-top: -100px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 100%;
+}
+.login-page .form .usernameInput {
+    font-size: 200%;
+    letter-spacing: 3px;
+    width: 400px;
+    height: 60px;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    border-bottom: 2px solid #fff;
+    outline: none;
+    text-align: center;
+}
+.login-page .form-group {
+    position: relative;
+    z-index: 10;
+    padding-top: 20px;
+    text-align: center;
+    height: 80px;
+    box-sizing: border-box;
+    width: 400px;
+    left: 50%;
+    margin-left: -200px;
+}
+.login-page .form-label {
+    width: 400px;
+    pointer-events: none;
+    font-size: 200%;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top:20px;
+    bottom:0;
+    display: inline-block;
+    -webkit-transition: all .25s linear;
+    transition: all .25s linear;
+}
+.login-page .form-label:after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    width: 5px;
+    background-color: #0092F5;
+    height: 2px;
+    left: 50%;
+    visibility: hidden;
+    -webkit-transition: all .25s linear;
+    transition: all .25s linear;
+}
+.usernameInput:focus ~ .form-label:after {
+    visibility: visible;
+    width: 100%;
+    left: 0;
+}
+.usernameInput:focus ~ .form-label {
+    color: #0092F5;
+    font-size: 20px;
+    top:0;
+}
+.usernameInput.dirty ~ .form-label {
+    font-size: 20px;
+    top:0;
+}
+.login-page .form-label, .login.page .usernameInput {
+    color: #fff;
+    font-weight: 100;
+    margin: 0;
+}
+/* Chat page */
+.chat-page {
+    display: none;
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+/* Font */
+.messages { font-size: 100%;}
+.msg-sys { color: #ccc; text-align: center; font-size: 80%; }
+.msg-item {margin: 0;}
+.msg-item .name{font-weight: 700;}
+.msg-item.msg-left{ text-align: left; }
+.msg-item.msg-left .con{ margin-left:2em; }
+.msg-item.msg-right{ text-align: right; }
+.msg-item.msg-right .con{ margin-right: 2em; }
+.inputMessage { font-size: 100%;}
+.user-list {position: absolute;left: 100%;top: -1px;border: 1px solid #CCCCCC;width: 200px;max-height: 100%;}
+.user-list p {margin: 0;color: #888;font-size: 14px;text-align: center;line-height: 26px;background-color: #F1F1F1;border-bottom: 1px solid #D0D0D0;}
+.user-list ul {padding: 10px;}
+/* Messages */
+.chatArea {
+    height: 100%;
+    padding-bottom: 60px;
+}
+.messages {
+    margin: 0;
+    overflow-y: scroll;
+    padding: 10px 20px 10px 20px;
+    height: 440px;
+}
+.message.typing .messageBody {
+    color: gray;
+}
+.username {
+    float: left;
+    font-weight: 700;
+    overflow: hidden;
+    padding-right: 15px;
+    text-align: right;
+}
+/* Input */
+.inputMessage {
+    border: 10px solid #F1F1F1;
+    bottom: 0;
+    height: 60px;
+    left: 0;
+    outline: none;
+    padding-left: 10px;
+    position: absolute;
+    right: 0;
+    width: 100%;
+}

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Socket.IO Chat Example</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<h2 class="page-header"> Koa.io 聊天室 v1.0.0</h2>
+<div class='container'>
+    <ul class="pages">
+
+        <!-- chat list  -->
+        <li class="chat-page" id="chatPage">
+            <div class="chatArea">
+                <ul class="messages" id="msgBox">
+
+                    <li class="msg-item msg-left">
+                        <dl class="box">
+                            <dt class="name">jack</dt>
+                            <dd class="con">hello!</dd>
+                        </dl>
+                    </li>
+                    <li class="msg-item msg-right">
+                        <dl class="box">
+                            <dt class="name">mary</dt>
+                            <dd class="con">Nice to meet you!</dd>
+                        </dl>
+                    </li>
+                    <li class="msg-sys"><p class="con">新用户加入&emsp;<time>22:29:22</time></p></li>
+
+                </ul>
+            </div>
+            <input id="msgIpt" class="inputMessage" placeholder="说点儿什么吧..."/>
+
+            <div class="user-list">
+                <p>当前在线：<b id="userNum"></b>人</p>
+                <ul id="userList">
+                    <li>暂无在线人员！</li>
+                </ul>
+            </div>
+        </li>
+
+        <!-- login -->
+        <li class="login-page" id="loginPage">
+            <div class="form">
+                <div class="form-group">
+                    <input class="usernameInput" type="text" maxlength="14" id="usernameInput" />
+                    <h3 class="form-label">Give me your name!</h3>
+                </div>
+            </div>
+        </li>
+
+    </ul>
+    <input type="hidden" id="currUser">
+</div>
+
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="/socket.io.js"></script>
+<script src="/index.js"></script>
+</body>
+</html>
